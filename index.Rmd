@@ -1,6 +1,6 @@
 ---
-title: "Nick Strayer's CV"
-author: Nick Strayer
+title: "Lin Khern's CV"
+author: Lin Khern Chia
 date: "`r Sys.Date()`"
 output:
   pagedown::html_resume:
@@ -27,7 +27,7 @@ library(tidyverse)
 using_googlesheets <- TRUE
 
 # Just the copied URL from the sheet
-positions_sheet_loc <- "https://docs.google.com/spreadsheets/d/14MQICF2F8-vf8CKPF1m4lyGKO6_thG-4aSwat1e2TWc"
+positions_sheet_loc <- "https://docs.google.com/spreadsheets/d/15uwqQcJJYXsYSviHOoan_OfaeO42Wm6DU604-H_sZiY/edit?usp=sharing"
 
 # Is this sheet available for anyone to read? If you're using a private sheet
 # set this to false and go to gather_data.R and run the data loading manually
@@ -122,7 +122,7 @@ Last updated on `r Sys.Date()`.
 Main
 ================================================================================
 
-Nick Strayer {#title}
+Lin Khern Avery Chia {#title}
 --------------------------------------------------------------------------------
 
 ```{r}
@@ -138,94 +138,30 @@ Education {data-icon=graduation-cap data-concise=true}
 print_section(position_data, 'education')
 ```
 
-
-
-Research Experience {data-icon=laptop}
---------------------------------------------------------------------------------
-
-```{r}
-print_section(position_data, 'research_positions')
-```
-
-
-
-Industry Experience {data-icon=suitcase}
+Research Experience
 --------------------------------------------------------------------------------
 
 ::: aside
 ```{r}
-print_text_block(text_blocks, 'industy_experience_aside')
+print_text_block(text_blocks, "research_experience_aside")
 ```
 :::
 
 ```{r}
-print_section(position_data, 'industry_positions')
+print_section(position_data, "research_experience")
 ```
 
-<!-- These breaks just force a new page so section doesnt get cut off -->
-<br>
-<br>
-<br>
-
-Teaching Experience {data-icon=chalkboard-teacher}
+Conference Proceedings {data-icon=newspaper}
 --------------------------------------------------------------------------------
-
-::: aside
 ```{r}
-print_text_block(text_blocks, 'teaching_experience_aside')
-```
-:::
-
-```{r}
-print_section(position_data, 'teaching_positions')
+print_section(position_data, "conference_proceedings")
 ```
 
-
-
-Selected Data Science Writing {data-icon=chart-line}
+Research Presentations
 --------------------------------------------------------------------------------
-
-::: aside
 ```{r}
-print_text_block(text_blocks, 'data_science_writing_aside')
+print_section(position_data, "research_presentations")
 ```
-:::
-
-```{r}
-print_section(position_data, 'data_science_writings')
-```
-
-
-
-Selected Press (About)  {data-icon=newspaper}
---------------------------------------------------------------------------------
-
-```{r}
-print_section(position_data, 'about_me_press')
-```
-
-
-<br>
-<br>
-
-
-Selected Press (By)  {data-icon=newspaper}
---------------------------------------------------------------------------------
-
-```{r}
-print_section(position_data, 'by_me_press')
-```
-
-
-
-Selected Publications, Posters, and Talks {data-icon=book}
---------------------------------------------------------------------------------
-
-```{r}
-print_section(position_data, 'academic_articles')
-```
-
-
 
 ```{r}
 if(PDF_EXPORT){
